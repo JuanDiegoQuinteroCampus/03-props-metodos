@@ -1,0 +1,23 @@
+use("React");
+db.createCollection("Usuario", {
+    validator:{
+        $jsonSchema:{
+            bsonType:'object',
+            required:["_id", "Nombre","Contrasena"],
+            properties:{
+                _id: {
+                    bsonType: "number",
+                    description: "_id should be int",
+                  },
+                  Nombre: {
+                    bsonType:"string",
+                    description:"Nombre should be string"
+                  },
+                  Contrasena: {
+                    bsonType:"string",
+                    description:"Contrasena should be string"
+                  }
+            }
+        }
+    }
+})
